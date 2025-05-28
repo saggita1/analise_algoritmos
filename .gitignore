@@ -1,0 +1,9 @@
+# Arquivos compilados
+*.o
+*.out
+*.exe
+*.a
+*.so
+
+# Arquivos temporários de editor
+*~
