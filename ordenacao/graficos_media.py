@@ -88,15 +88,15 @@ for tipo_entrada in df_media["TipoEntrada"].unique():
             plt.grid(True)
             plt.tight_layout()
 
-            # Exibir gráfico interativo
-            print("🔍 Exibindo gráfico interativo (feche a janela para continuar)...")
-            plt.show()
-
-            # Salvar gráfico
+            # Salvar gráfico (antes do show)
             nome_arquivo = f"{metrica.lower()}_{unidecode.unidecode(tipo_entrada.lower())}.png".replace(" ", "_")
             caminho_completo = os.path.join(PASTA_SAIDA, nome_arquivo)
             plt.savefig(caminho_completo)
             print(f"💾 Gráfico salvo como: {caminho_completo}\n")
+
+            # Exibir gráfico interativo
+            print("🔍 Exibindo gráfico interativo (feche a janela para continuar)...")
+            plt.show()
             plt.close()
 
         except Exception as e:
