@@ -1,6 +1,6 @@
 # Análise de Algoritmos de Ordenação
 
-Este projeto realiza a análise empírica dos algoritmos de ordenação **Bubble Sort**, **Insertion Sort**, **Merge Sort** e **Quick Sort**, com diferentes tamanhos de entrada e três tipos de arquivos: ordenado, aleatório e invertido (decrescente).
+Trabalho do aluno Ryan Pimentel para a Disciplina de Análise de algoritmos no curso de ciência da computação da UFRR para a análise empírica dos algoritmos de ordenação **Bubble Sort**, **Insertion Sort**, **Merge Sort** e **Quick Sort**, com diferentes tamanhos de entrada e três tipos de arquivos: ordenado, aleatório e invertido (decrescente).
 
 Abaixo estão os gráficos gerados a partir dos dados de três execuções experimentais, comparando o número de comparações e o tempo de execução em cada cenário.
 
@@ -71,8 +71,8 @@ Abaixo estão os gráficos gerados a partir dos dados de três execuções exper
 ## 📁 Organização dos Arquivos
 
 - Os gráficos estão na pasta `graficos/`
-- O script de geração de gráficos está em `graficos.R`
-- Os dados utilizados para gerar os gráficos estão em arquivos CSV (não listados aqui, adicione se quiser)
+- O script de geração de gráficos está em `graficos_media.py`
+- Os dados utilizados para gerar os gráficos estão em arquivos CSV
 
 ---
 
