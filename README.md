@@ -21,7 +21,7 @@ Abaixo estão os gráficos gerados a partir dos dados de três execuções exper
 
 ### 2. Entradas Aleatórias
 
-![Tempo - Aleatória](graficos/tempo_aleatoria.png)
+![Tempo - Aleatória](ordenacao/graficos/tempo_aleatoria.png)
 
 - **Merge Sort** e **Quick Sort** mantêm ótima performance.
 - **Bubble Sort** e **Insertion Sort** escalam mal com o aumento dos dados.
@@ -30,7 +30,7 @@ Abaixo estão os gráficos gerados a partir dos dados de três execuções exper
 
 ### 3. Entradas Decrescentes
 
-![Tempo - Decrescente](graficos/tempo_decrescente.png)
+![Tempo - Decrescente](ordenacao/graficos/tempo_decrescente.png)
 
 - **Insertion Sort** e **Bubble Sort** atingem seus piores casos.
 - **Quick Sort** também sofre se não houver randomização de pivôs.
@@ -42,7 +42,7 @@ Abaixo estão os gráficos gerados a partir dos dados de três execuções exper
 
 ### 4. Entradas Ordenadas
 
-![Comparações - Ordenada](graficos/comparacoes_ordenada.png)
+![Comparações - Ordenada](ordenacao/graficos/comparacoes_ordenada.png)
 
 - **Insertion Sort** apresenta número mínimo de comparações.
 - **Bubble Sort** e **Quick Sort** realizam muitas comparações.
@@ -52,7 +52,7 @@ Abaixo estão os gráficos gerados a partir dos dados de três execuções exper
 
 ### 5. Entradas Aleatórias
 
-![Comparações - Aleatória](graficos/comparacoes_aleatoria.png)
+![Comparações - Aleatória](ordenacao/graficos/comparacoes_aleatoria.png)
 
 - **Merge Sort** e **Quick Sort** são claramente mais eficientes.
 - **Insertion Sort** e **Bubble Sort** têm comportamento quadrático.
@@ -61,7 +61,7 @@ Abaixo estão os gráficos gerados a partir dos dados de três execuções exper
 
 ### 6. Entradas Decrescentes
 
-![Comparações - Decrescente](graficos/comparacoes_decrescente.png)
+![Comparações - Decrescente](ordenacao/graficos/comparacoes_decrescente.png)
 
 - **Bubble Sort**, **Insertion Sort** e **Quick Sort** têm número explosivo de comparações.
 - **Merge Sort** mantém número previsível e eficiente.
