@@ -10,7 +10,7 @@ Abaixo estão os gráficos gerados a partir dos dados de três execuções exper
 
 ### 1. Entradas Ordenadas
 
-![Tempo - Ordenada](graficos/tempo_ordenada.png)
+![Tempo - Ordenada](ordenacao/graficos/tempo_ordenada.png)
 
 - **Insertion Sort** é extremamente eficiente com dados ordenados, com tempos próximos de zero.
 - **Merge Sort** se mantém constante e eficiente.
