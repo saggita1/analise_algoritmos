@@ -85,5 +85,3 @@ Abaixo estão os gráficos gerados a partir dos dados de três execuções exper
 
 ---
 
-## 👨‍💻 Disciplina: Análise de Algoritmos
-Trabalho prático com foco na comparação empírica de algoritmos de ordenação.
