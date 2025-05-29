@@ -3,17 +3,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import unidecode
 
-# Caminhos relativos ao diretório atual
 CAMINHO_CSV = os.path.join(".", "resultados", "benchmark.csv")
 PASTA_SAIDA = os.path.join(".", "graficos")
 
-# Garantir que a pasta de saída existe
 os.makedirs(PASTA_SAIDA, exist_ok=True)
 
-# 1. Carregar CSV
 print("🔍 Lendo o arquivo CSV...")
 try:
-    df = pd.read_csv(CAMINHO_CSV)  # Mude para sep=";" se necessário
+    df = pd.read_csv(CAMINHO_CSV) 
     print("✅ CSV lido com sucesso!\n")
 except Exception as e:
     print("❌ Erro ao ler o CSV:", e)
@@ -21,11 +18,9 @@ except Exception as e:
 
 print("📄 Colunas detectadas:", df.columns.tolist())
 
-# 2. Verificar dados iniciais
 print("\n🔎 Primeiras linhas do DataFrame:")
 print(df.head())
 
-# 3. Detectar tipo de entrada com base no nome do arquivo
 def extrair_tipo(arquivo):
     if "aleatorio" in arquivo.lower():
         return "Aleatoria"
@@ -43,13 +38,11 @@ if "Arquivo" not in df.columns:
 df["TipoEntrada"] = df["Arquivo"].apply(extrair_tipo)
 print("🎯 Tipos de entrada únicos encontrados:", df["TipoEntrada"].unique())
 
-# 4. Definir métricas
 metricas = {
     "Comparacoes": "Número de Comparações",
     "Tempo": "Tempo de Execução (s)"
 }
 
-# 5. Gerar gráficos
 print("\n📈 Iniciando geração de gráficos...\n")
 for tipo_entrada in df["TipoEntrada"].unique():
     print(f"➡️  Gerando gráficos para tipo de entrada: {tipo_entrada}")
@@ -80,11 +73,10 @@ for tipo_entrada in df["TipoEntrada"].unique():
             plt.grid(True)
             plt.tight_layout()
 
-            # Mostrar gráfico interativamente antes de salvar
             print("🔍 Exibindo gráfico interativo (feche a janela para continuar)...")
             plt.show()
 
-            # Salvar após interação
+            # aqui salva após interação
             nome_arquivo = f"{metrica.lower()}_{unidecode.unidecode(tipo_entrada.lower())}.png".replace(" ", "_")
             caminho_completo = os.path.join(PASTA_SAIDA, nome_arquivo)
             plt.savefig(caminho_completo)
