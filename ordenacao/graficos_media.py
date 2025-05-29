@@ -4,14 +4,11 @@ import matplotlib.pyplot as plt
 import unidecode
 import glob
 
-# Diretórios
 PASTA_CSV = os.path.join(".", "resultados")
 PASTA_SAIDA = os.path.join(".", "graficos")
 
-# Garantir que a pasta de saída existe
 os.makedirs(PASTA_SAIDA, exist_ok=True)
 
-# 1. Localizar arquivos CSV
 print("🔍 Procurando arquivos CSV em './resultados/'...")
 arquivos_csv = glob.glob(os.path.join(PASTA_CSV, "*.csv"))
 
@@ -21,7 +18,6 @@ if len(arquivos_csv) < 3:
 else:
     print(f"✅ {len(arquivos_csv)} arquivos encontrados. Usando os 3 primeiros:\n", arquivos_csv[:3])
 
-# 2. Carregar e concatenar os dados
 dataframes = []
 for caminho in arquivos_csv[:3]:
     try:
@@ -35,7 +31,6 @@ for caminho in arquivos_csv[:3]:
 df = pd.concat(dataframes, ignore_index=True)
 print(f"\n📊 Total de dados combinados: {len(df)} linhas")
 
-# 3. Adicionar coluna de tipo de entrada
 def extrair_tipo(arquivo):
     if "aleatorio" in arquivo.lower():
         return "Aleatoria"
@@ -52,7 +47,6 @@ if "Arquivo" not in df.columns:
 df["TipoEntrada"] = df["Arquivo"].apply(extrair_tipo)
 print("🎯 Tipos de entrada únicos:", df["TipoEntrada"].unique())
 
-# 4. Calcular a média
 colunas_para_agrupar = ["Tamanho", "Algoritmo", "TipoEntrada"]
 metricas = {
     "Comparacoes": "Número de Comparações",
@@ -62,7 +56,6 @@ metricas = {
 print("\n📊 Calculando médias por grupo...")
 df_media = df.groupby(colunas_para_agrupar).mean(numeric_only=True).reset_index()
 
-# 5. Gerar gráficos
 print("\n📈 Iniciando geração de gráficos com médias...\n")
 for tipo_entrada in df_media["TipoEntrada"].unique():
     print(f"➡️  Gerando gráficos para tipo de entrada: {tipo_entrada}")
@@ -88,13 +81,11 @@ for tipo_entrada in df_media["TipoEntrada"].unique():
             plt.grid(True)
             plt.tight_layout()
 
-            # Salvar gráfico (antes do show)
             nome_arquivo = f"{metrica.lower()}_{unidecode.unidecode(tipo_entrada.lower())}.png".replace(" ", "_")
             caminho_completo = os.path.join(PASTA_SAIDA, nome_arquivo)
             plt.savefig(caminho_completo)
             print(f"💾 Gráfico salvo como: {caminho_completo}\n")
 
-            # Exibir gráfico interativo
             print("🔍 Exibindo gráfico interativo (feche a janela para continuar)...")
             plt.show()
             plt.close()
